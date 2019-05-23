@@ -107,7 +107,7 @@ end
 to click-input
   if mouse-inside? and mouse-down? [
     every 0.2 [
-      ask min-one-of first layers [ distancexy mouse-xcor mouse-ycor ] [
+      ask up-to-n-of 1 (turtle-set min-one-of (first layers) with [distancexy mouse-xcor mouse-ycor < 3][ distancexy mouse-xcor mouse-ycor ]) [
         set-output ifelse-value (output > 0.5)[ 0 ] [ 1 ]
         propagate
       ]
@@ -271,7 +271,7 @@ NIL
 NIL
 NIL
 NIL
-1
+0
 
 INPUTBOX
 13
@@ -682,7 +682,7 @@ false
 Polygon -7500403 true true 270 75 225 30 30 225 75 270
 Polygon -7500403 true true 30 75 75 30 270 225 225 270
 @#$#@#$#@
-NetLogo 6.1.0-RC1
+NetLogo 6.1.0
 @#$#@#$#@
 @#$#@#$#@
 @#$#@#$#@
