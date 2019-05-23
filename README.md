@@ -1,3 +1,8 @@
+This fork focuses on educational uses of ANNs in NetLogo ABMs. It introduces small changes to the original in order to focus on showing how ANNs work for high school students.
+
+--
+
+
 A simple predator-prey model in which the animals have evolving neural network brains.
 
 Note that `setup` and the first dozen ticks or so will be slow as the model populates the pool of brains, but then it will speed up substantially.
