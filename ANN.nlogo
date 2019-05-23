@@ -94,7 +94,7 @@ end
 
 to-report apply-reals [ in ]
   set-input in
-  propogate
+  propagate
   report map [ node -> [ output ] of node ] output-node-list
 end
 
@@ -109,13 +109,13 @@ to click-input
     every 0.2 [
       ask min-one-of first layers [ distancexy mouse-xcor mouse-ycor ] [
         set-output ifelse-value (output > 0.5)[ 0 ] [ 1 ]
-        propogate
+        propagate
       ]
     ]
   ]
 end
 
-to propogate
+to propagate
   (foreach (but-first layers) activation-lambdas [ [layer act] ->
     ask layer [
       set input bias + sum [ link-output ] of my-in-links
@@ -307,7 +307,7 @@ BUTTON
 159
 375
 randomize-weights
-randomize-weights\npropogate
+randomize-weights\npropagate
 NIL
 1
 T
